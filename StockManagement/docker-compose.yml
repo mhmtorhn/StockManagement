@@ -1,0 +1,15 @@
+﻿services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: stock-management-postgres
+    environment:
+      POSTGRES_DB: StockManagementDb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+    ports:
+      - "5432:5432"
+    volumes:
+      - stock-management-data:/var/lib/postgresql/data
+
+volumes:
+  stock-management-data:
